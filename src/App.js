@@ -7,6 +7,7 @@ import FallsIntro from './components/FallsIntro';
 import Activities from './components/Activities';
 import HubDiagram from './components/HubDiagram';
 import Countries from './components/Countries';
+import CityTours from './components/CityTours';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -15,6 +16,7 @@ const NAV_LINKS = [
   { href: '#activities', label: 'Activities' },
   { href: '#region', label: 'The Region' },
   { href: '#countries', label: 'Destinations' },
+  { href: '#cities', label: 'Cities' },
 ];
 
 function App() {
@@ -44,10 +46,10 @@ function App() {
 
   useEffect(() => {
     const els = document.querySelectorAll('[data-reveal]');
-    if (
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-      !('IntersectionObserver' in window)
-    ) {
+    const reduceMotion =
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
       els.forEach((el) => el.classList.add('in-view'));
       return;
     }
@@ -114,6 +116,7 @@ function App() {
       <Activities />
       <HubDiagram />
       <Countries />
+      <CityTours />
       <CTA />
       <Footer />
     </>

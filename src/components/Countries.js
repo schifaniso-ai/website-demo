@@ -71,6 +71,20 @@ const countries = [
       'Zanzibar beaches & spice tours',
     ],
   },
+  {
+    num: 'VI.',
+    name: 'Kenya',
+    tag: 'The Maasai Mara, Amboseli &amp; Kilimanjaro views',
+    desc: "Kenya runs from the Maasai Mara, where the wildebeest migration crosses over from the Serengeti, down past Amboseli, where elephants graze in front of Kilimanjaro. In between is Maasai land, and the tours here are as much about people as they are about wildlife.",
+    img: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    alt: 'Open savannah in the Maasai Mara, Kenya',
+    chips: [
+      'Maasai Mara Great Migration safaris',
+      'Amboseli & Kilimanjaro views',
+      'Maasai homeland & homestead visits',
+      'Kilimanjaro trekking from Kenya',
+    ],
+  },
 ];
 
 export default function Countries() {

@@ -573,6 +573,69 @@ nav.links a:hover {
   transform: translateY(-1px);
 }
 
+/* ---------- CITY / TOWNSHIP TOURS ---------- */
+.city-section {
+  background: var(--cream-dim);
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+}
+
+.city-card {
+  background: var(--cream);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 26px 50px -30px rgba(14, 42, 28, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 60px -32px rgba(14, 42, 28, 0.5);
+}
+
+.city-media {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.city-media img {
+  transition: transform 1s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+.city-card:hover .city-media img {
+  transform: scale(1.05);
+}
+
+.city-body {
+  padding: 34px 34px 38px;
+}
+
+.city-body .kicker {
+  color: var(--rust);
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.city-body h3 {
+  font-size: 1.55rem;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.city-body .desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #4a4438;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
 .chip::before {
   content: '';
   width: 5px;
@@ -734,6 +797,7 @@ footer {
   nav.links { display: none; }
   .falls-grid, .hub-wrap { grid-template-columns: 1fr; gap: 44px; }
   .act-grid { grid-template-columns: 1fr 1fr; }
+  .city-grid { grid-template-columns: 1fr; }
   .country-row,
   .country-row:nth-child(even) { grid-template-columns: 1fr; }
   .country-row:nth-child(even) .country-media { order: 1; }

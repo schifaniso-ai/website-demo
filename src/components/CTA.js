@@ -8,7 +8,7 @@ export default function CTA() {
           Plan the Journey
         </div>
         <h2>
-          Five countries, <em>one</em> unbroken wilderness.
+          Six countries, <em>one</em> unbroken wilderness.
         </h2>
         <div className="divider"></div>
         <p>

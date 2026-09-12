@@ -8,7 +8,7 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&q=80&w=2400&auto=format&fit=crop"
           alt="Victoria Falls cascading over the Zambezi River"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
         />
       </div>
@@ -20,9 +20,9 @@ export default function Hero() {
           the wild that follows.
         </h1>
         <p className="sub">
-          Victoria Falls is where the trip starts. Four countries of Southern
-          Africa open out beyond it, and the wilderness doesn't stop at the
-          border.
+          Victoria Falls is where the trip starts. Six countries of Southern
+          and East Africa open out beyond it, and the wilderness doesn't stop
+          at the border.
         </p>
         <div className="hero-actions">
           <a className="btn" href="#region">
