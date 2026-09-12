@@ -13,15 +13,15 @@ export default function HubDiagram() {
     <section className="section hub-section" id="region">
       <div className="wrap">
         <div className="hub-wrap">
-          <div className="hub-copy">
+          <div className="hub-copy" data-reveal>
             <div className="section-head">
               <div className="eyebrow">Beyond the Falls</div>
               <h2>One river, five countries</h2>
               <p>
-                Victoria Falls sits at the meeting point of Zimbabwe, Zambia,
-                Botswana and Namibia &mdash; with Tanzania's great migration a
-                short flight beyond. It's the natural gateway to the wildest
-                safari country left on the continent.
+                Victoria Falls sits where Zimbabwe, Zambia, Botswana and Namibia
+                meet, with Tanzania's great migration a short flight away. It
+                makes a natural gateway to some of the wildest safari country
+                left on the continent.
               </p>
             </div>
             <div className="hub-legend">
@@ -32,7 +32,7 @@ export default function HubDiagram() {
               ))}
             </div>
           </div>
-          <div className="hub-diagram">
+          <div className="hub-diagram" data-reveal style={{ '--reveal-delay': '140ms' }}>
             <svg viewBox="0 0 560 560" width="100%" height="100%">
               <circle cx="280" cy="280" r="230" fill="none" stroke="rgba(23,20,16,0.12)" strokeWidth="1" strokeDasharray="2 6" />
               <circle cx="280" cy="280" r="150" fill="none" stroke="rgba(23,20,16,0.14)" strokeWidth="1" strokeDasharray="2 6" />

@@ -5,7 +5,7 @@ const countries = [
     num: 'I.',
     name: 'South Africa',
     tag: 'Big Five &amp; the Cape coastline',
-    desc: 'From the bushveld of Kruger to the cliffs of the Cape Peninsula, South Africa pairs classic safari with dramatic coastal scenery in a single trip.',
+    desc: "Kruger's bushveld and the cliffs of the Cape Peninsula mean South Africa offers classic safari and dramatic coastline in one trip.",
     img: 'https://images.unsplash.com/photo-1594916105020-b28f829993b7?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     alt: 'Lioness resting on a rock in Kruger National Park, South Africa',
     chips: [
@@ -19,7 +19,7 @@ const countries = [
     num: 'II.',
     name: 'Zambia',
     tag: 'Walking safaris & the other side of the falls',
-    desc: "Zambia claims the other half of Victoria Falls at Livingstone, and inland, South Luangwa National Park \u2014 the birthplace of the African walking safari.",
+    desc: "Zambia has the other half of Victoria Falls at Livingstone. Inland, South Luangwa National Park is where the African walking safari started.",
     img: 'https://images.unsplash.com/photo-1611067523512-e0d4abd25f39?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     alt: 'Victoria Falls viewed from the Zambian side near Livingstone',
     chips: [
@@ -33,7 +33,7 @@ const countries = [
     num: 'III.',
     name: 'Botswana',
     tag: "The Okavango Delta & Chobe's elephants",
-    desc: "A vast inland delta and the highest concentration of elephants in Africa make Botswana one of the continent's most pristine wildlife destinations.",
+    desc: "With a huge inland delta and Africa's densest elephant population, Botswana is one of the continent's prime wildlife destinations.",
     img: 'https://images.unsplash.com/photo-1590214766638-c8dbb1262b79?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     alt: 'Elephants swimming in the Okavango Delta, Botswana',
     chips: [
@@ -47,7 +47,7 @@ const countries = [
     num: 'IV.',
     name: 'Namibia',
     tag: 'Red dunes, desert wildlife & open sky',
-    desc: 'Namibia trades the classic bush for towering red dunes and desert-adapted wildlife, in landscapes as vast and empty as anywhere on earth.',
+    desc: "Namibia swaps the classic bush for towering red dunes and desert-adapted wildlife. The landscapes are as vast and empty as anywhere on earth.",
     img: 'https://images.unsplash.com/photo-1772289093510-2c64b03d7fd5?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     alt: 'Dead trees in the red dunes of Deadvlei, Sossusvlei, Namibia',
     chips: [
@@ -61,7 +61,7 @@ const countries = [
     num: 'V.',
     name: 'Tanzania',
     tag: 'The Serengeti & the great migration',
-    desc: "Tanzania is East Africa's classic safari country \u2014 endless plains, the world's largest wildebeest migration, and a crater teeming with the Big Five.",
+    desc: "Tanzania is East Africa's classic safari country: endless plains, the world's largest wildebeest migration, and a crater packed with the Big Five.",
     img: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     alt: 'Safari vehicle on a game drive in the Serengeti, Tanzania',
     chips: [
@@ -76,10 +76,15 @@ const countries = [
 export default function Countries() {
   return (
     <section className="countries" id="countries">
-      {countries.map((c) => (
-        <div className="country-row" key={c.name}>
+      {countries.map((c, i) => (
+        <div
+          className="country-row"
+          key={c.name}
+          data-reveal
+          style={{ '--reveal-delay': `${i * 90}ms` }}
+        >
           <div className="country-media">
-            <img src={c.img} alt={c.alt} />
+            <img src={c.img} alt={c.alt} loading="lazy" decoding="async" />
           </div>
           <div className="country-copy">
             <div className="num">{c.num}</div>
