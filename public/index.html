@@ -5,32 +5,111 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0e2a1c" />
+
+    <!-- Primary SEO -->
+    <title>Victoria Falls Safaris | Safari Tours in Southern &amp; East Africa</title>
+    <meta
+      name="description"
+      content="Safari tours from Victoria Falls, Zimbabwe across Southern and East Africa. Trips to South Africa, Zambia, Botswana, Namibia, Tanzania and Kenya."
+    />
+    <meta name="robots" content="index, follow" />
+    <!--
+      TODO: replace with the production domain once known.
+    -->
+    <link rel="canonical" href="https://www.example.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Victoria Falls Safaris" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Victoria Falls Safaris | Safari Tours in Southern &amp; East Africa" />
+    <meta property="og:description" content="Safari tours from Victoria Falls, Zimbabwe across Southern and East Africa. Trips to South Africa, Zambia, Botswana, Namibia, Tanzania and Kenya." />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" />
+    <meta property="og:image:alt" content="Victoria Falls cascading over the Zambezi River" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Victoria Falls Safaris | Safari Tours in Southern &amp; East Africa" />
+    <meta name="twitter:description" content="Safari tours from Victoria Falls, Zimbabwe across Southern and East Africa." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" />
+    <meta name="twitter:image:alt" content="Victoria Falls cascading over the Zambezi River" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TravelAgency",
+            "@id": "https://www.example.com/#organization",
+            "name": "Victoria Falls Safaris",
+            "url": "https://www.example.com/",
+            "description": "Safari tours from Victoria Falls, Zimbabwe across Southern and East Africa.",
+            "areaServed": [
+              "Zimbabwe",
+              "Zambia",
+              "Botswana",
+              "Namibia",
+              "South Africa",
+              "Tanzania",
+              "Kenya"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Victoria Falls",
+              "addressCountry": "ZW"
+            },
+            "image": "https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&q=80&w=2400&auto=format&fit=crop"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.example.com/#website",
+            "url": "https://www.example.com/",
+            "name": "Victoria Falls Safaris",
+            "publisher": { "@id": "https://www.example.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "TouristDestination",
+            "@id": "https://www.example.com/#destination",
+            "name": "Victoria Falls",
+            "description": "Victoria Falls, known locally as Mosi-oa-Tunya ('the smoke that thunders'), is a UNESCO World Heritage Site and one of the Seven Natural Wonders of the World, spanning the Zambezi River between Zimbabwe and Zambia.",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -17.9243,
+              "longitude": 25.8572
+            },
+            "image": "https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&q=80&w=2400&auto=format&fit=crop",
+            "sameAs": ["https://en.wikipedia.org/wiki/Victoria_Falls"],
+            "includesAttraction": {
+              "@type": "TouristAttraction",
+              "name": "Victoria Falls (Mosi-oa-Tunya)",
+              "description": "The world's largest sheet of falling water, over a mile wide, dropping 108 metres into the gorge below.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Victoria Falls",
+                "addressCountry": "ZW"
+              }
+            }
+          }
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1627347456206-d3df7d8484b0?fm=jpg&q=80&w=2400&auto=format&fit=crop" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

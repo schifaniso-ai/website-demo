@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "VF Safaris",
+  "name": "Victoria Falls Safaris",
+  "description": "Safari tours from Victoria Falls, Zimbabwe across Southern and East Africa.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0e2a1c",
+  "background_color": "#f5efe0"
 }
