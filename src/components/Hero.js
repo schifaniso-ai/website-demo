@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -25,9 +26,9 @@ export default function Hero() {
           at the border.
         </p>
         <div className="hero-actions">
-          <a className="btn" href="#region">
+          <Link className="btn" to="/about#region">
             Explore the region
-          </a>
+          </Link>
           <a className="btn ghost" href="#activities">
             What to do
           </a>

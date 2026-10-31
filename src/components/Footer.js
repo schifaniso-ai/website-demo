@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="wrap foot-row">
         <div className="brand">
-          <span className="mark"></span> [company name]
+          <span className="mark"></span> The African Carnival
         </div>
         <div className="fine">
           Victoria Falls, Zimbabwe &middot; Gateway to Southern &amp; East Africa

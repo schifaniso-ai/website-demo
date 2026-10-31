@@ -1,126 +1,64 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import './App.css';
 
-import Hero from './components/Hero';
-import FlagLine from './components/FlagLine';
-import FallsIntro from './components/FallsIntro';
-import Activities from './components/Activities';
-import HubDiagram from './components/HubDiagram';
-import Countries from './components/Countries';
-import CityTours from './components/CityTours';
-import CTA from './components/CTA';
+import Header from './components/Header';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ActivitiesPage from './pages/ActivitiesPage';
+import { BookingRoute } from './pages/BookingPage';
+import ContactPage from './pages/ContactPage';
 
-const NAV_LINKS = [
-  { href: '#falls', label: 'The Falls' },
-  { href: '#activities', label: 'Activities' },
-  { href: '#region', label: 'The Region' },
-  { href: '#countries', label: 'Destinations' },
-  { href: '#cities', label: 'Cities' },
-];
-
-function App() {
-  const [headerSolid, setHeaderSolid] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const setMenu = useCallback((open) => {
-    setMenuOpen(open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  }, []);
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setHeaderSolid(window.scrollY > 60);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'Escape') setMenu(false);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [setMenu]);
-
-  useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal]');
-    const reduceMotion =
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      els.forEach((el) => el.classList.add('in-view'));
-      return;
+    if (hash) {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        target.scrollIntoView();
+        return;
+      }
     }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function Site() {
+  const location = useLocation();
 
   return (
     <>
-      <header className={headerSolid || menuOpen ? 'solid' : ''}>
-        <div className="wrap navrow">
-          <a href="#top" className="brand">
-            <span className="mark"></span> [company name]
-          </a>
-          <nav className="links" aria-label="Primary">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href}>
-                {l.label}
-              </a>
-            ))}
-          </nav>
-          <button
-            type="button"
-            className="menu-btn"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
-            onClick={() => setMenu(!menuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <nav
-          id="mobile-nav"
-          className={`mobile-nav${menuOpen ? ' open' : ''}`}
-          aria-label="Mobile"
-        >
-          <div className="wrap">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMenu(false)}>
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </nav>
-      </header>
-
-      <Hero />
-      <FlagLine />
-      <FallsIntro />
-      <Activities />
-      <HubDiagram />
-      <Countries />
-      <CityTours />
-      <CTA />
+      <ScrollManager />
+      <Header />
+      <main key={location.pathname}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/activities" element={<ActivitiesPage />} />
+          <Route path="/book/:activityId/:step?" element={<BookingRoute />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Site />
+    </BrowserRouter>
+  );
+}

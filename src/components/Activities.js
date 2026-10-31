@@ -1,37 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const activities = [
-  {
-    idx: '01',
-    title: 'Whitewater Rafting',
-    desc: 'Grade 3 to 5 rapids through Batoka Gorge below the falls, some of the best one-day whitewater runs in the world.',
-  },
-  {
-    idx: '02',
-    title: 'Victoria Falls Bridge Bungee',
-    desc: 'A 111-metre freefall off the historic Victoria Falls Bridge, right between Zimbabwe and Zambia.',
-  },
-  {
-    idx: '03',
-    title: "Devil's Pool Swimming",
-    desc: "In the dry season you can swim to the very lip of the falls and look straight down the drop from a natural rock pool.",
-  },
-  {
-    idx: '04',
-    title: 'Flight of Angels',
-    desc: 'Helicopter and microlight flights run the full length of the gorge, with the falls below you.',
-  },
-  {
-    idx: '05',
-    title: 'Zambezi Sunset Cruise',
-    desc: 'A slow float upstream past hippo pods and elephants drinking, as the sun drops over the river.',
-  },
-  {
-    idx: '06',
-    title: 'Zambezi National Park Safari',
-    desc: 'Game drives and walking safaris minutes from town, tracking elephant, buffalo, and lion along the riverbank.',
-  },
-];
+import activities from '../data/activities';
 
 export default function Activities() {
   return (
@@ -49,13 +19,28 @@ export default function Activities() {
           {activities.map((act, i) => (
             <div
               className="act-card"
-              key={act.idx}
+              id={act.id}
+              key={act.id}
               data-reveal
               style={{ '--reveal-delay': `${i * 90}ms` }}
             >
               <span className="idx">{act.idx}</span>
               <h3>{act.title}</h3>
               <p>{act.desc}</p>
+              <div className="act-meta">
+                <span className="act-duration">{act.duration}</span>
+                <span className="act-price">
+                  From <strong>${act.price}</strong>
+                  <span> / person</span>
+                </span>
+              </div>
+              <Link
+                className="btn act-book"
+                to={`/book/${act.id}`}
+                aria-label={`Book ${act.title} now`}
+              >
+                Book Now <span aria-hidden="true">→</span>
+              </Link>
             </div>
           ))}
         </div>

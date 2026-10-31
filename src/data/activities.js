@@ -1,0 +1,142 @@
+const activities = [
+  {
+    id: 'whitewater-rafting',
+    idx: '01',
+    title: 'Whitewater Rafting',
+    desc: 'Grade 3 to 5 rapids through Batoka Gorge below the falls, some of the best one-day whitewater runs in the world.',
+    tagline: 'Batoka Gorge · Grade 3–5',
+    price: 185,
+    duration: 'Full day',
+    durationLong: '6–7 hours',
+    maxParticipants: 12,
+    times: ['07:00', '08:30'],
+    image:
+      'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Rafting_the_Zambezi_-_panoramio.jpg/1280px-Rafting_the_Zambezi_-_panoramio.jpg',
+    imageAlt: 'A raft of paddlers running whitewater on the Zambezi River',
+    meetingPoint: 'Victoria Falls Adventure Hub, Parkway',
+    includes: [
+      'Qualified river guides',
+      'Safety briefing and all equipment',
+      'Lunch on the riverbank',
+      'Return transfer from Victoria Falls',
+    ],
+  },
+  {
+    id: 'bridge-bungee',
+    idx: '02',
+    title: 'Victoria Falls Bridge Bungee',
+    desc: 'A 111-metre freefall off the historic Victoria Falls Bridge, right between Zimbabwe and Zambia.',
+    tagline: 'Victoria Falls Bridge · 111 m',
+    price: 160,
+    duration: '2 hours',
+    durationLong: 'Allow 2 hours',
+    maxParticipants: 8,
+    times: ['09:00', '11:00', '13:00', '15:00'],
+    image:
+      'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Victoria_Falls_Bridge_and_Zambezi_river.jpg/1280px-Victoria_Falls_Bridge_and_Zambezi_river.jpg',
+    imageAlt: 'The Victoria Falls Bridge spanning the Zambezi River',
+    meetingPoint: 'Bridge ticket office, Victoria Falls border post',
+    includes: [
+      'Bungee jump and harness',
+      'Pre-jump safety briefing',
+      'Jump certificate',
+      'Spectator access for one guest',
+    ],
+  },
+  {
+    id: 'devils-pool',
+    idx: '03',
+    title: "Devil's Pool Swimming",
+    desc: "In the dry season you can swim to the very lip of the falls and look straight down the drop from a natural rock pool.",
+    tagline: 'Livingstone Island · Seasonal',
+    price: 95,
+    duration: '3 hours',
+    durationLong: '3 hours including transfers',
+    maxParticipants: 6,
+    times: ['07:30', '09:30', '14:00'],
+    image:
+      'https://images.unsplash.com/photo-1611067523512-e0d4abd25f39?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+    imageAlt: 'Victoria Falls and the Zambezi River seen from the Zambian side',
+    meetingPoint: 'Livingstone Island launch point, Royal Livingstone',
+    includes: [
+      'Guided swim and island walk',
+      'Life jackets and safety support',
+      'Light refreshments',
+      'Boat crossing to Livingstone Island',
+    ],
+    seasonNote:
+      "Devil's Pool is weather and water-level dependent. Your guide will confirm conditions 24 hours before departure.",
+  },
+  {
+    id: 'flight-of-angels',
+    idx: '04',
+    title: 'Flight of Angels',
+    desc: 'Helicopter and microlight flights run the full length of the gorge, with the falls below you.',
+    tagline: 'Helicopter · Falls circuit',
+    price: 210,
+    duration: '25 minutes',
+    durationLong: '25-minute flight',
+    maxParticipants: 6,
+    times: ['07:30', '09:00', '10:30', '12:00', '14:00', '15:30'],
+    image:
+      'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Victoria_Falls_from_the_helicopter.jpg/1280px-Victoria_Falls_from_the_helicopter.jpg',
+    imageAlt: 'Aerial view of Victoria Falls from a helicopter',
+    meetingPoint: 'Victoria Falls Helipad, Airport Road',
+    includes: [
+      '25-minute scenic helicopter flight',
+      'Window seat for every guest',
+      'Pilot commentary',
+      'Hotel transfer within Victoria Falls',
+    ],
+  },
+  {
+    id: 'sunset-cruise',
+    idx: '05',
+    title: 'Zambezi Sunset Cruise',
+    desc: 'A slow float upstream past hippo pods and elephants drinking, as the sun drops over the river.',
+    tagline: 'Zambezi River · Sunset',
+    price: 75,
+    duration: '2.5 hours',
+    durationLong: '2.5 hours on the water',
+    maxParticipants: 20,
+    times: ['16:30'],
+    image:
+      'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Zambezi_sunset_cruise.jpg/1280px-Zambezi_sunset_cruise.jpg',
+    imageAlt: 'A boat cruising the Zambezi River at sunset',
+    meetingPoint: 'Zambezi River jetty, Victoria Falls',
+    includes: [
+      'Sunset cruise with a local guide',
+      'Welcome drink and canapés',
+      'Wildlife spotting on the river',
+      'Return hotel transfer',
+    ],
+  },
+  {
+    id: 'zambezi-safari',
+    idx: '06',
+    title: 'Zambezi National Park Safari',
+    desc: 'Game drives and walking safaris minutes from town, tracking elephant, buffalo, and lion along the riverbank.',
+    tagline: 'Zambezi National Park · Big Five',
+    price: 145,
+    duration: '4 hours',
+    durationLong: '4-hour game drive',
+    maxParticipants: 9,
+    times: ['06:00', '15:30'],
+    image:
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'A safari vehicle on a game drive in open savannah',
+    meetingPoint: 'Zambezi National Park main gate',
+    includes: [
+      'Open safari vehicle and guide',
+      'Park fees',
+      'Bottled water and a light snack',
+      'Binoculars on board',
+    ],
+  },
+];
+
+export function getActivity(activityId) {
+  return activities.find((activity) => activity.id === activityId);
+}
+
+export default activities;

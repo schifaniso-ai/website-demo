@@ -55,6 +55,7 @@ const countries = [
       "Deadvlei's ancient dead camel-thorn trees",
       'Etosha waterhole game viewing',
       'Damaraland desert-adapted elephants',
+      'Wild horses of the Namib desert',
     ],
   },
   {
